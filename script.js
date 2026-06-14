@@ -34,6 +34,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Direct Contact Form
     initDirectContactForm();
 
+    // Blog Section Reader
+    initBlogSection();
+
     // KVKK Modal Overlay
     initKvkkModal();
 });
@@ -788,6 +791,146 @@ function initKvkkModal() {
             const bookingModal = document.getElementById('booking-modal');
             const detailsModal = document.getElementById('details-modal');
             const isAnyOtherModalActive = bookingModal.classList.contains('active') || detailsModal.classList.contains('active');
+            if (!isAnyOtherModalActive) {
+                document.body.style.overflow = '';
+            }
+        }, 400);
+    }
+}
+
+/* ==========================================================================
+   Blog Posts Overlay Reader
+   ========================================================================== */
+function initBlogSection() {
+    const blogPosts = {
+        '1': {
+            category: 'Şema Terapi',
+            title: 'Şemalarımız Hayatımızı Nasıl Şekillendirir?',
+            date: '12 Haziran 2026',
+            content: `
+                <p>Hayatımız boyunca tekrar eden ilişkisel hayal kırıklıkları, değersizlik hissi ya da kronik bir onaylanma ihtiyacı mı yaşıyorsunuz? Psikoterapide sıkça karşılaştığımız bu durumların arkasında, genellikle çocukluk döneminde temelleri atılan ve dünyayı algılama biçimimizi belirleyen "şemalar" yer alır.</p>
+                <p>Şema Terapi ekolünün kurucusu Jeffrey Young'a göre şemalar, çocukluk ve ergenlik dönemi boyunca gelişen, yaşamımız boyunca eklenen yeni deneyimlerle kemikleşen, kendimiz ve dünya hakkındaki köklü inanç kalıplarıdır. Çocuklukta karşılanmayan temel duygusal ihtiyaçlarımız (güvenlik, sevgi, özerklik, sınırlar) sonucunda ortaya çıkarlar.</p>
+                <h4>En Sık Karşılaşılan Uyumsuz Şemalar</h4>
+                <p>İşte yetişkinlik hayatını gölgeleyen bazı temel şemalar:</p>
+                <ul>
+                    <li><strong>Kuşkuculuk / Kötüye Kullanılma Şeması:</strong> Başkalarının kendisini sömüreceğine, aldatacağına ya da zarar vereceğine dair derin bir inançtır.</li>
+                    <li><strong>Kusurluluk Şeması:</strong> Kişinin kendisini içten içe kusurlu, sevilmeye layık olmayan, değersiz hissetmesidir.</li>
+                    <li><strong>Boyun Eğicilik Şeması:</strong> Çatışmadan kaçınmak ve başkalarını memnun etmek adına kendi haklarından, isteklerinden ve duygularından feragat etmektir.</li>
+                    <li><strong>Yüksek Standartlar Şeması:</strong> Hata yapmaktan aşırı korkmak ve kendisi için gerçekçi olmayan hedefler belirlemektir.</li>
+                </ul>
+                <blockquote>Şemalarımız, taktığımız filtrelenmiş bir gözlük gibidir. Çevremizdeki her şeyi bu gözlüğün rengine göre yorumlarız. Örneğin kusurluluk şeması olan bir kişi, arkadaşının yorgunluktan kaynaklanan sessizliğini "beni sevmiyor, sıkıcı buluyor" diye yorumlayabilir.</blockquote>
+                <h4>Farkındalık ve Değişim Adımları</h4>
+                <p>Şemaların etkisini azaltmak ve sağlıklı bir yetişkin moduna geçmek için ilk adım farkındalıktır. Hangi şemaların tetiklendiğini fark ettiğiniz an, şemanın size dikte ettiği savunma yöntemleri (kaçınma, aşırı telafi veya teslim olma) yerine Sağlıklı Yetişkin yanınızla duruma şefkatli ve rasyonel bir yaklaşım sergileyebilirsiniz. Bu süreç, profesyonel bir destekle çok daha kalıcı ve derinlemesine yapılandırılabilir.</p>
+            `
+        },
+        '2': {
+            category: 'Kendine Yardım',
+            title: 'İçimizdeki Yaralı Çocukla Karşılaşmak',
+            date: '8 Haziran 2026',
+            content: `
+                <p>Bir yetişkin olarak günlük hayatımızı sürdürürken, bazen hiç beklenmedik bir olay karşısında verdiğimiz tepkinin olgunluğumuzla örtüşmediğini fark ederiz. Örneğin, basit bir eleştiriye aşırı öfkelenebilir, partnerimizin geç kalmasıyla derin bir terk edilme paniği yaşayabiliriz. İşte bu anlar, içimizdeki "Yaralı Çocuk" modunun devreye girdiği anlardır.</p>
+                <p>"Kendi ebeveynimiz olmak" (reparenting) kavramı, çocukluk dönemimizde anne-babamız veya bakım verenlerimiz tarafından karşılanamayan, eksik kalan duygusal ihtiyaçlarımızı (koşulsuz sevgi, onay, korunma hissi vb.) bugün kendi yetişkin benliğimizle sarmalama sürecini ifade eder.</p>
+                <h4>Yaralı Çocuk Neden Tetiklenir?</h4>
+                <p>Çocuklukta yalnız bırakıldığımızda, haksızlığa uğradığımızda veya duygularımız küçümsendiğinde hissettiğimiz o acı veren duygular yok olmaz; zihnimizin derinliklerinde saklanır. Yetişkinlikte bu anıları hatırlatan benzer bir durumla (örneğin eşimizin bizi dinlememesi) karşılaştığımızda, içimizdeki o çocuk aynı çaresizlik ve korkuyla tepki verir.</p>
+                <blockquote>İçimizdeki çocuğu iyileştirmek, geçmişi değiştirmek anlamına gelmez. Geçmişin üzerimizdeki yıkıcı gücünü, şimdiki aklımız ve şefkatimizle dönüştürmektir.</blockquote>
+                <h4>Kendi Ebeveyniniz Nasıl Olursunuz?</h4>
+                <p>Kendi kendinize uygulayabileceğiniz bazı temel yaklaşımlar:</p>
+                <ul>
+                    <li><strong>Duyguyu fark edin ve isimlendirin:</strong> Şu an hissettiğim şey ne? Öfke mi, çaresizlik mi?</li>
+                    <li><strong>Çocuğu selamlayın:</strong> Kendinize "Şu an içimdeki küçük çocuk korkuyor ve ilgi istiyor" deyin.</li>
+                    <li><strong>Şefkatli ses tonunu kullanın:</strong> Kendinize, sevgi dolu bir ebeveynin çocuğuna konuşacağı gibi yaklaşın: "Seni duyuyorum, buradayım ve güvendesin."</li>
+                    <li><strong>Sınırlar koyun:</strong> Sağlıklı yetişkin olarak hem kendinizi koruyun hem de başkalarına sağlıklı sınırlar çekin.</li>
+                </ul>
+                <p>İçsel ebeveynlik becerilerini geliştirmek zaman alan bir pratik sürecidir. Kendinize karşı sabırlı olun ve bu yolculukta kendinize şefkat göstermeyi ihmal etmeyin.</p>
+            `
+        },
+        '3': {
+            category: 'EMDR',
+            title: 'EMDR Terapisi ve Travmaların Sindirilmesi',
+            date: '3 Haziran 2026',
+            content: `
+                <p>Beynimiz, yaşadığımız her deneyimi işleme ve sindirme kapasitesine sahip muazzam bir bilgi işleme sistemidir. Ancak, bizi derinden sarsan, korkutan veya çaresiz bırakan olaylar (kazalar, kayıplar, şiddet, hatta çocukluktaki ihmaller) bu sistemin çalışmasını bozabilir. Bu duruma travmatik yaşantılar diyoruz.</p>
+                <p>EMDR (Eye Movement Desensitization and Reprocessing / Göz Hareketleriyle Duyarsızlaştırma ve Yeniden İşleme), bu işlenememiş travmatik anıların beyinde sağlıklı bir şekilde sindirilmesini sağlayan, kanıta dayalı, güçlü bir psikoterapi yöntemidir.</p>
+                <h4>Travmatik Anı Neden "Sindirilmez"?</h4>
+                <p>Normal şartlarda deneyimlerimiz beyindeki uyumsal bilgi işleme sistemiyle işlenerek hafıza ağlarına entegre edilir. Fakat travma anında, aşırı uyarılma nedeniyle sistem kilitlenir. Olay, yaşandığı günkü haliyle; yani o anki görüntüler, sesler, bedensel duyumlar ve inançlarla ("ben değersizim", "güvende değilim") sağ beyinde izole bir şekilde donup kalır. Bu yüzden, yıllar sonra bile o anıyı hatırlatan bir tetikleyiciyle karşılaştığımızda, acıyı dün gibi taze hissederiz.</p>
+                <blockquote>EMDR, beynin kendi kendini iyileştirme mekanizmasını harekete geçirir. Tıpkı fiziksel bir yaranın temizlenip kabuk bağlamasına izin verilmesi gibi, zihinsel yaraların da temizlenmesini sağlar.</blockquote>
+                <h4>EMDR Nasıl Çalışır?</h4>
+                <p>EMDR seanslarında, danışanın travmatik anıya odaklanması sağlanırken, terapist çift yönlü uyarımlar (göz hareketleri, sesler veya dokunuşlar) verir. Bu çift yönlü uyarım, beynin her iki yarım küresini sırayla aktive ederek donmuş anının çözülmesini sağlar. Sürecin sonunda:</p>
+                <ul>
+                    <li>Anının uyandırdığı acı verici duygular ve bedensel rahatsızlıklar kaybolur veya minimuma iner.</li>
+                    <li>Kişi anıya dair "Ben güçsüzüm" gibi olumsuz inançlar yerine "Elimden geleni yaptım, artık güvendediyim" gibi olumlu inançlar geliştirir.</li>
+                    <li>Olay unutulmaz, ancak hayatı kısıtlayan bir acı olmaktan çıkıp sıradan bir geçmiş anıya dönüşür.</li>
+                </ul>
+            `
+        },
+        '4': {
+            category: 'Farkındalık',
+            title: 'Kronik Stres ve Bedensel Tepkilerimiz',
+            date: '28 Mayıs 2026',
+            content: `
+                <p>Zihnimizin taşıdığı yükler, sadece düşüncelerimizle sınırlı kalmaz. Beden ve zihin, birbirine kopmaz bağlarla bağlı tek bir sistemdir. Çoğu zaman zihnimizde bastırmaya çalıştığımız, yüzleşmekten kaçındığımız stres ve kaygı, kendini bedensel semptomlar aracılığıyla gösterir. Bedenimiz, zihnimizin sessizce çığlık attığı bir alandır.</p>
+                <p>Günümüz dünyasında sıkça maruz kaldığımız kronik stres, otonom sinir sistemimizi sürekli bir "savaş ya da kaç" modunda tutar. Bu durum, uzun vadede bedenin kaynaklarının tükenmesine ve somatik (bedensel) rahatsızlıkların ortaya çıkmasına yol açar.</p>
+                <h4>Stresin Bedensel İpuçları</h4>
+                <p>Stres altındayken bedenimizde sıklıkla şu değişimler gözlenir:</p>
+                <ul>
+                    <li><strong>Kas Gerginliği ve Ağrılar:</strong> Özellikle omuz, boyun ve çene kaslarının sürekli sıkılması, kronik baş ve sırt ağrılarına neden olur.</li>
+                    <li><strong>Sindirim Sistemi Problemleri:</strong> Bağırsaklarımız "ikinci beynimiz" olarak adlandırılır. Hassas bağırsak sendromu (IBS), şişkinlik ve mide ağrıları doğrudan stresle ilişkilidir.</li>
+                    <li><strong>Sığ Nefes ve Çarpıntı:</strong> Kaygı anında nefes alışverişimiz hızlanır ve sığlaşır; bu da kalbimizin gereğinden hızlı çarpmasına sebep olur.</li>
+                    <li><strong>Uyku Bozuklukları ve Yorgunluk:</strong> Kortizol hormonunun sürekli yüksek olması, derin uyku evrelerine geçmeyi zorlaştırır ve kişi sabahları yorgun uyanır.</li>
+                </ul>
+                <blockquote>Bedenimiz, zihnimizin konuşamadığı dili konuşur. Dinlemediğimiz her hafif fısıltı, zamanla şiddetli bir bedensel çığlığa dönüşebilir.</blockquote>
+                <h4>Bedenle Yeniden Bağ Kurmak</h4>
+                <p>Kronik stresin etkilerini hafifletmek için zihinsel çalışmaların yanında somatik (bedensel) farkındalık pratikleri uygulamak şarttır. Gün içinde derin diyafram nefesleri almak, kasları sırayla sıkıp gevşetmek (progresif kas gevşetme) ve düzenli egzersizler sinir sistemini sakinleştirir. Bedeninizin verdiği sinyalleri düşmanca değil, sizi korumaya çalışan bir dostun uyarıları olarak görmeye başladığınızda, iyileşme süreci de başlamış demektir.</p>
+            `
+        }
+    };
+
+    const blogOverlay = document.getElementById('blog-modal');
+    if (!blogOverlay) return;
+
+    const openBtns = document.querySelectorAll('.blog-card-btn');
+    const closeBtn = blogOverlay.querySelector('.modal-close-btn');
+
+    const modalCategory = blogOverlay.querySelector('.blog-modal-category');
+    const modalTitle = blogOverlay.querySelector('.blog-modal-title');
+    const modalDate = blogOverlay.querySelector('.blog-modal-date');
+    const modalContent = blogOverlay.querySelector('.blog-modal-content');
+
+    openBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            const postId = btn.getAttribute('data-post-id');
+            const post = blogPosts[postId];
+
+            if (post) {
+                modalCategory.textContent = post.category;
+                modalTitle.textContent = post.title;
+                modalDate.textContent = post.date;
+                modalContent.innerHTML = post.content;
+
+                blogOverlay.style.display = 'flex';
+                blogOverlay.offsetHeight; // force reflow
+                blogOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        });
+    });
+
+    closeBtn.addEventListener('click', closeBlogModal);
+    blogOverlay.addEventListener('click', (e) => {
+        if (e.target === blogOverlay) closeBlogModal();
+    });
+
+    function closeBlogModal() {
+        blogOverlay.classList.remove('active');
+        setTimeout(() => {
+            blogOverlay.style.display = 'none';
+            // Only restore body scroll if no other overlay is active
+            const bookingModal = document.getElementById('booking-modal');
+            const detailsModal = document.getElementById('details-modal');
+            const kvkkModal = document.getElementById('kvkk-modal');
+            const isAnyOtherModalActive = bookingModal.classList.contains('active') || 
+                                          detailsModal.classList.contains('active') || 
+                                          kvkkModal.classList.contains('active');
             if (!isAnyOtherModalActive) {
                 document.body.style.overflow = '';
             }

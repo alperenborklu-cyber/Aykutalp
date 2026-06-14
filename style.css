@@ -1491,6 +1491,165 @@ footer {
 }
 
 /* ==========================================================================
+   Blog Section
+   ========================================================================== */
+.blog-section {
+    padding: var(--section-padding);
+    background-color: var(--bg-secondary);
+    border-top: 1px solid var(--border-color);
+}
+
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    margin-top: 50px;
+}
+
+@media (max-width: 768px) {
+    .blog-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
+
+.blog-card {
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform var(--transition-medium), box-shadow var(--transition-medium), border-color var(--transition-medium);
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--accent-gold);
+}
+
+.blog-card-img-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.blog-card-placeholder-img {
+    transition: transform var(--transition-medium);
+}
+
+.blog-card:hover .blog-card-placeholder-img {
+    transform: scale(1.05);
+}
+
+.blog-card-body {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.blog-card-category {
+    font-family: var(--font-branding);
+    font-size: 0.75rem;
+    color: var(--accent-gold);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.blog-card-title {
+    font-family: var(--font-heading);
+    font-size: 1.35rem;
+    color: var(--text-primary);
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+.blog-card-excerpt {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 25px;
+    flex-grow: 1;
+}
+
+.blog-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--border-color);
+    padding-top: 20px;
+    margin-top: auto;
+}
+
+.blog-card-date {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.blog-card-btn {
+    background: none;
+    border: none;
+    color: var(--accent-gold);
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    transition: color var(--transition-fast), transform var(--transition-fast);
+}
+
+.blog-card-btn:hover {
+    color: var(--text-primary);
+    transform: translateX(4px);
+}
+
+/* Blog Modal Content Styles */
+.blog-modal-content p {
+    margin-bottom: 15px;
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+.blog-modal-content p:first-of-type {
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    line-height: 1.8;
+}
+
+.blog-modal-content h4 {
+    font-family: var(--font-heading);
+    color: var(--text-primary);
+    font-size: 1.25rem;
+    margin-top: 25px;
+    margin-bottom: 12px;
+    font-weight: 500;
+}
+
+.blog-modal-content blockquote {
+    border-left: 3px solid var(--accent-gold);
+    padding: 10px 0 10px 20px;
+    margin: 25px 0;
+    font-style: italic;
+    color: var(--text-primary);
+    background-color: var(--bg-tertiary);
+    border-radius: 0 var(--border-radius-sm) var(--border-radius-sm) 0;
+}
+
+.blog-modal-content ul {
+    margin-left: 25px;
+    margin-bottom: 20px;
+    list-style-type: disc;
+}
+
+.blog-modal-content li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+/* ==========================================================================
    Modals (Interactive Booking Wizard & Details Modal)
    ========================================================================== */
 .modal-overlay {
