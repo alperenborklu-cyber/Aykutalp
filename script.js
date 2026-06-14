@@ -4,6 +4,9 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Initialize Preloader
+    initPreloader();
+
     // Initialize Theme
     initTheme();
 
@@ -965,5 +968,25 @@ function initBlogSection() {
                 document.body.style.overflow = '';
             }
         }, 400);
+    }
+}
+
+/* ==========================================================================
+   Preloader Hiding Logic
+   ========================================================================== */
+function initPreloader() {
+    const preloader = document.getElementById('preloader');
+    if (!preloader) return;
+    
+    const hideLoader = () => {
+        setTimeout(() => {
+            preloader.classList.add('fade-out');
+        }, 800); // 800ms minimum display for premium branding transition
+    };
+
+    if (document.readyState === 'complete') {
+        hideLoader();
+    } else {
+        window.addEventListener('load', hideLoader);
     }
 }
