@@ -135,6 +135,29 @@ function initScrollEffects() {
             }
         });
     });
+
+    // Smooth logo click on homepage to avoid reload or adding #home hash
+    const logoLinks = document.querySelectorAll('.logo-link');
+    logoLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            const isHomepage = window.location.pathname === '/' || 
+                               window.location.pathname.endsWith('index.html') || 
+                               window.location.protocol === 'file:';
+            const targetHref = link.getAttribute('href');
+            if (isHomepage && (targetHref === 'index.html' || targetHref === '#home' || targetHref.endsWith('index.html'))) {
+                e.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+                if (history.pushState) {
+                    history.pushState(null, null, window.location.pathname + window.location.search);
+                } else {
+                    window.location.hash = '';
+                }
+            }
+        });
+    });
 }
 
 /* ==========================================================================
