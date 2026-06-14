@@ -51,10 +51,9 @@ function initTheme() {
     const themeToggleBtn = document.getElementById('theme-toggle');
     const themeIcon = themeToggleBtn.querySelector('use');
     
-    // Check saved theme or system preference
+    // Check saved theme (default to dark if not set)
     const savedTheme = localStorage.getItem('alp-psikoloji-theme');
-    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const initialTheme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
+    const initialTheme = savedTheme || 'dark';
     
     setTheme(initialTheme);
 
