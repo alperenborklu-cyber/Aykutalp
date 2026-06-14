@@ -190,7 +190,6 @@ header {
 }
 
 header.scrolled {
-    padding: 12px 0;
     box-shadow: var(--shadow-sm);
 }
 
@@ -211,10 +210,6 @@ header.scrolled {
     width: auto;
     object-fit: contain;
     transition: transform var(--transition-medium);
-}
-
-header.scrolled .logo-img {
-    height: 68px;
 }
 
 .logo-link:hover .logo-img {
@@ -1898,10 +1893,6 @@ footer {
     
     .logo-img {
         height: 60px;
-    }
-    
-    header.scrolled .logo-img {
-        height: 52px;
     }
     
     .brand-name {
