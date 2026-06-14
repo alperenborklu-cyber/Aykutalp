@@ -31,6 +31,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Book Waitlist Subscription Form
     initWaitlistForm();
 
+    // Direct Contact Form
+    initDirectContactForm();
+
     // KVKK Modal Overlay
     initKvkkModal();
 });
@@ -594,6 +597,27 @@ function initBookingWizard() {
                 appointmentData.email = contactInputs[2].value.trim();
                 appointmentData.notes = document.getElementById('book-notes').value.trim();
 
+                // Generate mailto link
+                const subject = `Randevu Talebi - ${appointmentData.service} - ${appointmentData.name}`;
+                const body = `Merhaba,
+
+Web siteniz üzerinden yeni bir randevu talebi oluşturuldu.
+
+Seçilen Hizmet: ${appointmentData.service}
+Tercih Edilen Tarih: ${appointmentData.date}
+Tercih Edilen Saat Dilimi: ${appointmentData.time}
+
+Danışan Bilgileri:
+Adı Soyadı: ${appointmentData.name}
+Telefon: ${appointmentData.phone}
+E-posta: ${appointmentData.email}
+Notlar: ${appointmentData.notes || 'Belirtilmedi'}
+
+Bu danışan KVKK Aydınlatma Metnini okuyup kabul etmiştir.`;
+
+                const mailtoUrl = `mailto:aykutalpborklu@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                window.location.href = mailtoUrl;
+
                 // Mock API dispatch
                 setTimeout(() => {
                     currentStep++;
@@ -646,6 +670,19 @@ function initWaitlistForm() {
             submitBtn.disabled = true;
             submitBtn.textContent = 'Kaydediliyor...';
             
+            // Generate mailto link
+            const subject = 'Kitap Ön Kayıt - Alp Psikoloji';
+            const body = `Merhaba,
+
+"Kendi Ebeveynimiz Olma" kitabı için yeni bir ön kayıt talebi alındı.
+
+E-posta Adresi: ${email}
+
+İyi çalışmalar.`;
+
+            const mailtoUrl = `mailto:aykutalpborklu@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            window.location.href = mailtoUrl;
+            
             setTimeout(() => {
                 form.reset();
                 submitBtn.style.display = 'none';
@@ -655,6 +692,68 @@ function initWaitlistForm() {
                 successMsg.style.display = 'block';
             }, 1200);
         }
+    });
+}
+
+/* ==========================================================================
+   Direct Contact Form Submission
+   ========================================================================== */
+function initDirectContactForm() {
+    const form = document.getElementById('direct-contact-form');
+    if (!form) return;
+    
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const successMsg = document.getElementById('contact-success-msg');
+    
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        const name = document.getElementById('form-name').value.trim();
+        const phone = document.getElementById('form-phone').value.trim();
+        const email = document.getElementById('form-email').value.trim();
+        const subjectSelect = document.getElementById('form-subject');
+        const subject = subjectSelect.options[subjectSelect.selectedIndex].text;
+        const msg = document.getElementById('form-msg').value.trim();
+        const kvkkChecked = document.getElementById('form-kvkk').checked;
+        
+        if (!name || !phone || !email || !kvkkChecked) {
+            alert('Lütfen tüm zorunlu alanları doldurun ve KVKK metnini onaylayın.');
+            return;
+        }
+        
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Gönderiliyor...';
+        
+        // Generate mailto link
+        const mailSubject = `İletişim Formu - ${subject} - ${name}`;
+        const mailBody = `Merhaba,
+
+Web sitenizdeki Detaylı Bilgi Talep Formu üzerinden yeni bir mesaj gönderildi.
+
+Adı Soyadı: ${name}
+Telefon: ${phone}
+E-posta: ${email}
+Başvuru Nedeni / Konu: ${subject}
+Mesaj:
+${msg || 'Belirtilmedi'}
+
+Bu danışan KVKK Aydınlatma Metnini okuyup kabul etmiştir.`;
+
+        const mailtoUrl = `mailto:aykutalpborklu@gmail.com?subject=${encodeURIComponent(mailSubject)}&body=${encodeURIComponent(mailBody)}`;
+        window.location.href = mailtoUrl;
+        
+        setTimeout(() => {
+            form.reset();
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Formu Gönder';
+            
+            successMsg.textContent = 'Mesajınız başarıyla iletildi (Mail uygulamanız açıldıysa gönder butonuna basarak işlemi tamamlayabilirsiniz).';
+            successMsg.style.display = 'block';
+            
+            setTimeout(() => {
+                successMsg.style.display = 'none';
+            }, 8000);
+        }, 1200);
     });
 }
 
