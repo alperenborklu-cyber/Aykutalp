@@ -796,7 +796,8 @@ function initKvkkModal() {
             // Only restore body scroll if no other overlay is open
             const bookingModal = document.getElementById('booking-modal');
             const detailsModal = document.getElementById('details-modal');
-            const isAnyOtherModalActive = bookingModal.classList.contains('active') || detailsModal.classList.contains('active');
+            const isAnyOtherModalActive = (bookingModal && bookingModal.classList.contains('active')) || 
+                                          (detailsModal && detailsModal.classList.contains('active'));
             if (!isAnyOtherModalActive) {
                 document.body.style.overflow = '';
             }
@@ -934,9 +935,9 @@ function initBlogSection() {
             const bookingModal = document.getElementById('booking-modal');
             const detailsModal = document.getElementById('details-modal');
             const kvkkModal = document.getElementById('kvkk-modal');
-            const isAnyOtherModalActive = bookingModal.classList.contains('active') || 
-                                          detailsModal.classList.contains('active') || 
-                                          kvkkModal.classList.contains('active');
+            const isAnyOtherModalActive = (bookingModal && bookingModal.classList.contains('active')) || 
+                                          (detailsModal && detailsModal.classList.contains('active')) || 
+                                          (kvkkModal && kvkkModal.classList.contains('active'));
             if (!isAnyOtherModalActive) {
                 document.body.style.overflow = '';
             }
