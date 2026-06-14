@@ -81,6 +81,7 @@ function initTheme() {
    ========================================================================== */
 function initScrollEffects() {
     const header = document.querySelector('header');
+    if (!header) return;
     const navLinks = document.querySelectorAll('.nav-link');
     const sections = document.querySelectorAll('section');
 
@@ -142,6 +143,7 @@ function initScrollEffects() {
 function initMobileNav() {
     const burgerMenu = document.getElementById('burger-menu');
     const mobileOverlay = document.getElementById('mobile-nav');
+    if (!burgerMenu || !mobileOverlay) return;
     const mobileLinks = document.querySelectorAll('.mobile-nav-link');
     const burgerBars = document.querySelectorAll('.burger-bar');
 
@@ -265,6 +267,7 @@ function initFaqAccordion() {
    ========================================================================== */
 function initDetailModals() {
     const modalOverlay = document.getElementById('details-modal');
+    if (!modalOverlay) return;
     const closeBtn = modalOverlay.querySelector('.modal-close-btn');
     const modalTitle = modalOverlay.querySelector('.detail-modal-title');
     const modalTag = modalOverlay.querySelector('.detail-modal-tag');
@@ -423,6 +426,7 @@ function initDetailModals() {
    ========================================================================== */
 function initBookingWizard() {
     const bookingOverlay = document.getElementById('booking-modal');
+    if (!bookingOverlay) return;
     const openWizardBtns = document.querySelectorAll('.open-booking-wizard');
     const closeWizardBtn = bookingOverlay.querySelector('.modal-close-btn');
     
@@ -661,6 +665,7 @@ Bu danışan KVKK Aydınlatma Metnini okuyup kabul etmiştir.`;
    ========================================================================== */
 function initWaitlistForm() {
     const form = document.getElementById('waitlist-form');
+    if (!form) return;
     const input = form.querySelector('.waitlist-input');
     const submitBtn = form.querySelector('.btn');
     const successMsg = form.querySelector('.form-success-msg');
@@ -765,6 +770,7 @@ Bu danışan KVKK Aydınlatma Metnini okuyup kabul etmiştir.`;
    ========================================================================== */
 function initKvkkModal() {
     const kvkkOverlay = document.getElementById('kvkk-modal');
+    if (!kvkkOverlay) return;
     const openBtns = document.querySelectorAll('.open-kvkk-modal');
     const closeBtn = kvkkOverlay.querySelector('.modal-close-btn');
 

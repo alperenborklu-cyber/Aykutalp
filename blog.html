@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="tr" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Alp Psikoloji | Uzman Klinik Psikolog Ömer Aykutalp Börklü</title>
+    <meta name="description" content="Ruh sağlığı, şema terapi, EMDR ve farkındalık üzerine yazılar ve paylaşımlar.">
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- SVG Icon Sprite Map (Loaded globally) -->
+    <svg style="display: none;">
+        <symbol id="icon-sun" viewBox="0 0 24 24">
+            <path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58a.996.996 0 0 0-1.41 0c-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37a.996.996 0 0 0-1.41 0c-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0a.996.996 0 0 0 0-1.41l-1.06-1.06zm-1.06-10.96c.39-.39.39-1.03 0-1.41a.996.996 0 0 0-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.01a.996.996 0 0 0-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06c.39-.38.39-1.02 0-1.41z"/>
+        </symbol>
+        <symbol id="icon-moon" viewBox="0 0 24 24">
+            <path d="M12.3 22c5.07 0 9.27-3.79 9.93-8.73-.1.01-.2.03-.3.03-4.14 0-7.5-3.36-7.5-7.5 0-.71.1-1.4.29-2.05A10.013 10.013 0 0 0 2 12c0 5.52 4.48 10 10 10zm-6-15.39a8.036 8.036 0 0 1 8.52-2.3c-.34.99-.52 2.06-.52 3.19 0 5.25 4.25 9.5 9.5 9.5.47 0 .93-.04 1.39-.1.24 3.65-2.5 6.8-6.19 7.1-3.69.3-7.15-2.1-7.8-5.8-.65-3.7 1.45-7.4 5.1-8.39z"/>
+        </symbol>
+        <symbol id="icon-close" viewBox="0 0 24 24">
+            <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+        </symbol>
+        <symbol id="icon-chevron-right" viewBox="0 0 24 24">
+            <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+        </symbol>
+        <symbol id="icon-whatsapp" viewBox="0 0 24 24">
+            <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm0 18.17c-1.55 0-3.07-.42-4.4-1.2l-.32-.19-3.27.86.87-3.19-.21-.33a8.188 8.188 0 0 1-1.25-4.39c0-4.52 3.68-8.2 8.2-8.2 2.19 0 4.25.85 5.8 2.4 1.55 1.55 2.4 3.61 2.4 5.8 0 4.52-3.68 8.2-8.2 8.2zm4.51-6.17c-.25-.13-1.47-.72-1.69-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-1.12-.56-1.92-1-2.69-2.33-.2-.35.2-.33.58-1.09.06-.13.03-.24-.01-.32-.04-.08-.39-.95-.54-1.3-.15-.35-.3-.3-.41-.3h-.35c-.12 0-.32.04-.49.23-.17.19-.64.63-.64 1.53 0 .9 0 1.76.08 1.95.07.19 1.76 2.68 4.25 3.75.59.26 1.05.41 1.41.52.6.19 1.14.16 1.57.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.08.14-1.18-.07-.1-.23-.19-.48-.32z"/>
+        </symbol>
+        <symbol id="icon-phone" viewBox="0 0 24 24">
+            <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+        </symbol>
+        <symbol id="icon-instagram" viewBox="0 0 24 24">
+            <path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2zm-.2 2A3.6 3.6 0 0 0 4 7.6v8.8A3.6 3.6 0 0 0 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6A3.6 3.6 0 0 0 16.4 4H7.6zm8.9 2.5a1 1 0 1 1 0 2 1 1 0 0 1 0-2zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/>
+        </symbol>
+        <symbol id="icon-doktortakvimi" viewBox="0 0 24 24">
+            <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm-2-7h-5v5h5v-5z"/>
+        </symbol>
+    </svg>
+
+    <!-- ==========================================================================
+       Header / Navigation
+       ========================================================================== -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html#home" class="logo-link">
+                <img src="logo-psikolog-aykutalp-börklü.png" alt="Alp Psikoloji Logo" class="logo-img logo-dark-theme">
+                <img src="logo-psikolog-aykutalp-börklü-siyah.png" alt="Alp Psikoloji Logo" class="logo-img logo-light-theme">
+                <div class="brand-text">
+                    <span class="brand-name">Alp Psikoloji</span>
+                    <span class="brand-sub">Ömer Aykutalp Börklü</span>
+                </div>
+            </a>
+            
+            <nav>
+                <ul class="nav-list">
+                    <li><a href="index.html#home" class="nav-link">Ana Sayfa</a></li>
+                    <li><a href="index.html#about" class="nav-link">Hakkımda</a></li>
+                    <li><a href="index.html#services" class="nav-link">Hizmetler</a></li>
+                    <li><a href="index.html#book" class="nav-link">Kitap</a></li>
+                    <li><a href="index.html#faq" class="nav-link">S.S.S.</a></li>
+                    <li><a href="blog.html" class="nav-link active">Blog</a></li>
+                    <li><a href="index.html#contact" class="nav-link">İletişim</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <button class="theme-toggle" id="theme-toggle" aria-label="Temayı Değiştir">
+                        <svg class="theme-icon"><use href="#icon-sun"></use></svg>
+                    </button>
+                    <button class="btn btn-primary open-booking-wizard">Randevu Al</button>
+                </div>
+            </nav>
+            
+            <!-- Burger Menu for Mobile -->
+            <div class="burger-menu" id="burger-menu" aria-label="Menüyü Aç">
+                <div class="burger-bar"></div>
+                <div class="burger-bar"></div>
+                <div class="burger-bar"></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Nav Drawer Overlay -->
+    <div class="mobile-nav-overlay" id="mobile-nav">
+        <ul class="mobile-nav-list">
+            <li><a href="index.html#home" class="mobile-nav-link">Ana Sayfa</a></li>
+            <li><a href="index.html#about" class="mobile-nav-link">Hakkımda</a></li>
+            <li><a href="index.html#services" class="mobile-nav-link">Hizmetler</a></li>
+            <li><a href="index.html#book" class="mobile-nav-link">Kitap</a></li>
+            <li><a href="index.html#faq" class="mobile-nav-link">Sıkça Sorulan Sorular</a></li>
+            <li><a href="blog.html" class="mobile-nav-link active">Blog</a></li>
+            <li><a href="index.html#contact" class="mobile-nav-link">İletişim</a></li>
+        </ul>
+        <button class="btn btn-primary open-booking-wizard" style="width: 100%;">Randevu Al</button>
+    </div>
+
+    <main style="padding-top: 140px;">
+        <!-- ==========================================================================
+           Blog Section
+           ========================================================================== -->
+        <section id="blog" class="blog-section" style="border-top: none; background-color: transparent;">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-subtitle">Yazılar & Paylaşımlar</span>
+                    <h2 class="section-title">Ruh Sağlığı & Farkındalık</h2>
+                    <p style="text-align: center; max-width: 600px; margin: 15px auto 0; color: var(--text-secondary); line-height: 1.6;">
+                        Uzman Klinik Psikolog Ömer Aykutalp Börklü'nün şema terapi, EMDR, duygusal farkındalık ve kendine yardım yöntemleri üzerine kaleme aldığı güncel yazılar.
+                    </p>
+                </div>
+
+                <div class="blog-grid reveal" style="margin-top: 40px;">
+                    <!-- Blog Card 1 -->
+                    <article class="blog-card">
+                        <div class="blog-card-img-wrapper">
+                            <div class="blog-card-placeholder-img" style="background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--border-color) 100%); width: 100%; height: 200px; display: flex; align-items: center; justify-content: center; font-size: 3rem; color: var(--accent-gold); opacity: 0.85;">❖</div>
+                        </div>
+                        <div class="blog-card-body">
+                            <span class="blog-card-category">Şema Terapi</span>
+                            <h3 class="blog-card-title">Şemalarımız Hayatımızı Nasıl Şekillendirir?</h3>
+                            <p class="blog-card-excerpt">Çocukluk döneminde geliştirdiğimiz uyumsuz şemalar, yetişkinlikteki ilişkilerimizi ve kararlarimizi nasıl etkiliyor? Farkındalık yaratmanın adımları.</p>
+                            <div class="blog-card-footer">
+                                <span class="blog-card-date">12 Haziran 2026</span>
+                                <button class="blog-card-btn" data-post-id="1">Devamını Oku →</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Blog Card 2 -->
+                    <article class="blog-card">
+                        <div class="blog-card-img-wrapper">
+                            <div class="blog-card-placeholder-img" style="background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--border-color) 100%); width: 100%; height: 200px; display: flex; align-items: center; justify-content: center; font-size: 3rem; color: var(--accent-gold); opacity: 0.85;">👥</div>
+                        </div>
+                        <div class="blog-card-body">
+                            <span class="blog-card-category">Kendine Yardım</span>
+                            <h3 class="blog-card-title">İçimizdeki Yaralı Çocukla Karşılaşmak</h3>
+                            <p class="blog-card-excerpt">"Kendi ebeveynimiz olmak" ne anlama geliyor? Çocukluktaki karşılanmamış ihtiyaçlarimizi yetişkin halimizle nasıl iyileştirebiliriz?</p>
+                            <div class="blog-card-footer">
+                                <span class="blog-card-date">8 Haziran 2026</span>
+                                <button class="blog-card-btn" data-post-id="2">Devamını Oku →</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Blog Card 3 -->
+                    <article class="blog-card">
+                        <div class="blog-card-img-wrapper">
+                            <div class="blog-card-placeholder-img" style="background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--border-color) 100%); width: 100%; height: 200px; display: flex; align-items: center; justify-content: center; font-size: 3rem; color: var(--accent-gold); opacity: 0.85;">☉</div>
+                        </div>
+                        <div class="blog-card-body">
+                            <span class="blog-card-category">EMDR</span>
+                            <h3 class="blog-card-title">EMDR Terapisi ve Travmaların Sindirilmesi</h3>
+                            <p class="blog-card-excerpt">Yaşadığımız olumsuz yaşam deneyimlerinin etkileri neden yıllar sonra bile taze kalır? EMDR'nin beynimizdeki iyileştirici gücü.</p>
+                            <div class="blog-card-footer">
+                                <span class="blog-card-date">3 Haziran 2026</span>
+                                <button class="blog-card-btn" data-post-id="3">Devamını Oku →</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Blog Card 4 -->
+                    <article class="blog-card">
+                        <div class="blog-card-img-wrapper">
+                            <div class="blog-card-placeholder-img" style="background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--border-color) 100%); width: 100%; height: 200px; display: flex; align-items: center; justify-content: center; font-size: 3rem; color: var(--accent-gold); opacity: 0.85;">🧠</div>
+                        </div>
+                        <div class="blog-card-body">
+                            <span class="blog-card-category">Farkındalık</span>
+                            <h3 class="blog-card-title">Kronik Stres ve Bedensel Tepkilerimiz</h3>
+                            <p class="blog-card-excerpt">Zihnimizin taşıdığı yükler bedenimize nasıl yansır? Somatik belirtiler, panik ataklar ve bedenle yeniden bağ kurma yolları.</p>
+                            <div class="blog-card-footer">
+                                <span class="blog-card-date">28 Mayıs 2026</span>
+                                <button class="blog-card-btn" data-post-id="4">Devamını Oku →</button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ==========================================================================
+       Footer
+       ========================================================================== -->
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <div class="footer-logo">
+                    <img src="logo-psikolog-aykutalp-börklü.png" alt="Alp Psikoloji Logo" class="footer-logo-img logo-dark-theme">
+                    <img src="logo-psikolog-aykutalp-börklü-siyah.png" alt="Alp Psikoloji Logo" class="footer-logo-img logo-light-theme">
+                    <span class="brand-name" style="font-size: 1.2rem;">Alp Psikoloji</span>
+                </div>
+                <p class="footer-desc">Bütünleştirici seanslar eşliğinde, zihninizin derinliklerindeki dengeleri keşfederek kendinizle ve dünyayla kurduğunuz bağı güçlendirin.</p>
+            </div>
+            
+            <div class="footer-col">
+                <h4 class="footer-title">Hızlı Bağlantılar</h4>
+                <div class="footer-links">
+                    <a href="index.html#home">Ana Sayfa</a>
+                    <a href="index.html#about">Uzman Hakkında</a>
+                    <a href="index.html#services">Terapi Ekolleri</a>
+                    <a href="index.html#book">Kitabımız</a>
+                    <a href="index.html#faq">Sıkça Sorulan Sorular</a>
+                    <a href="index.html#contact">Randevu & İletişim</a>
+                    <a href="#" class="open-kvkk-modal">KVKK Metni</a>
+                </div>
+            </div>
+            
+            <div class="footer-col">
+                <h4 class="footer-title">Yasal Uyarı</h4>
+                <p class="footer-legal-notice">Sitede paylaşılan tüm içerikler yalnızca bilgilendirme amaçlı olup, tıbbi teşhis veya doğrudan bir psikiyatrik tedavi tavsiyesi yerine geçmez. Herhangi bir psikolojik rahatsızlık durumunda mutlaka hekiminize başvurunuz.</p>
+            </div>
+        </div>
+        
+        <div class="container footer-bottom">
+            <p class="copyright">&copy; 2026 Alp Psikoloji. Tüm Hakları Saklıdır.</p>
+            <p class="developer-credit">Designed by <a href="https://alperenborklu.com" target="_blank">Alperen Börklü</a></p>
+        </div>
+    </footer>
+
+    <!-- ==========================================================================
+       Interactive Modals
+       ========================================================================== -->
+
+    <!-- Modal 3: KVKK Aydınlatma Metni -->
+    <div class="modal-overlay" id="kvkk-modal">
+        <div class="modal-box" style="max-width: 650px;">
+            <button class="modal-close-btn" aria-label="Kapat"><svg><use href="#icon-close"></use></svg></button>
+            <div class="modal-body">
+                <div class="detail-modal-header">
+                    <span class="detail-modal-tag">Yasal Bilgilendirme</span>
+                    <h3 class="detail-modal-title">KVKK Aydınlatma Metni</h3>
+                </div>
+                <div class="detail-modal-content" style="font-size: 0.9rem; line-height: 1.6; color: var(--text-secondary); display: flex; flex-direction: column; gap: 15px;">
+                    <p><strong>Veri Sorumlusu:</strong> Alp Psikoloji - Uzman Klinik Psikolog Ömer Aykutalp Börklü</p>
+                    <p>6698 sayılı Kişisel Verilerin Korunması Kanunu ("KVKK") uyarınca, kişisel verileriniz veri sorumlusu sıfatıyla tarafımızca aşağıda açıklanan kapsamda işlenebilecektir.</p>
+                    
+                    <h4 style="font-family: var(--font-heading); margin-top: 10px; color: var(--accent-gold); font-size: 1.1rem;">1. Kişisel Verilerin İşlenme Amacı</h4>
+                    <p>Toplanan kişisel verileriniz (ad-soyad, telefon, e-posta, talep edilen hizmet ve (varsa) mesajınız); randevu talebinizin oluşturulması, terapi süreçlerinin planlanması, iletişim faaliyetlerinin yürütülmesi ve yasal yükümlülüklerin yerine getirilmesi amaçlarıyla işlenmektedir.</p>
+                    
+                    <h4 style="font-family: var(--font-heading); margin-top: 10px; color: var(--accent-gold); font-size: 1.1rem;">2. Kişisel Verilerin Aktarılması</h4>
+                    <p>Kişisel verileriniz, herhangi bir üçüncü şahsa veya kuruma ticari amaçla aktarılmamakta olup; yalnızca yasal mevzuat uyarınca yetkili resmi kurum ve kuruluşlara, hukuki yükümlülüklerimizi yerine getirmek amacıyla aktarılabilecektir.</p>
+                    
+                    <h4 style="font-family: var(--font-heading); margin-top: 10px; color: var(--accent-gold); font-size: 1.1rem;">3. Veri Sahibi Olarak Haklarınız</h4>
+                    <p>KVKK'nın 11. maddesi kapsamında, kişisel verilerinizin işlenip işlenmediğini öğrenme, işlenmişse buna ilişkin bilgi talep etme, kişisel verilerinizin eksik veya yanlış işlenmiş olması hâlinde bunların düzeltilmesini isteme ve verilerinizin silinmesini talep etme haklarına sahipsiniz. Haklarınızı kullanmak için kliniğimizle doğrudan iletişime geçebilirsiniz.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 2: Multi-step Appointment Booking Wizard -->
+    <div class="modal-overlay" id="booking-modal">
+        <div class="modal-box" style="max-width: 650px;">
+            <button class="modal-close-btn" aria-label="Kapat"><svg><use href="#icon-close"></use></svg></button>
+            <div class="modal-body">
+                <div class="wizard-header">
+                    <h3 class="wizard-title" style="font-family: var(--font-branding); font-size: 1.4rem; color: var(--accent-gold); letter-spacing: 0.05em; text-align: center;">Randevu Talep Sistemi</h3>
+                </div>
+                
+                <div class="wizard-steps-indicator">
+                    <div class="wizard-step-indicator-item active">1</div>
+                    <div class="wizard-step-indicator-item">2</div>
+                    <div class="wizard-step-indicator-item">3</div>
+                    <div class="wizard-step-indicator-item">✓</div>
+                </div>
+
+                <!-- Step 1 Pane -->
+                <div class="wizard-pane active">
+                    <h4 class="wizard-title">Hizmet Seçimi</h4>
+                    <p class="wizard-desc">Lütfen danışmanlık talep ettiğiniz ana alanı seçiniz.</p>
+                    <div class="wizard-card-grid">
+                        <div class="wizard-card-option" data-service="Yetişkin Terapisi">
+                            <span class="wizard-card-icon">❖</span>
+                            <span class="wizard-card-title">Yetişkin Terapisi</span>
+                        </div>
+                        <div class="wizard-card-option" data-service="Aile & Çift Danışmanlığı">
+                            <span class="wizard-card-icon">👥</span>
+                            <span class="wizard-card-title">Çift Danışmanlığı</span>
+                        </div>
+                        <div class="wizard-card-option" data-service="Çocuk-Ergen Danışmanlığı">
+                            <span class="wizard-card-icon">👦</span>
+                            <span class="wizard-card-title">Çocuk-Ergen</span>
+                        </div>
+                        <div class="wizard-card-option" data-service="EMDR Terapisi">
+                            <span class="wizard-card-icon">☉</span>
+                            <span class="wizard-card-title">EMDR Terapisi</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2 Pane -->
+                <div class="wizard-pane">
+                    <h4 class="wizard-title">Tarih ve Saat Tercihi</h4>
+                    <p class="wizard-desc">Seans için uygun olduğunuz tahmini zaman dilimini belirleyiniz.</p>
+                    <div class="contact-form" style="grid-template-columns: 1fr; gap: 20px;">
+                        <div class="input-box">
+                            <label for="book-date">Tercih Edilen Gün (Salı - Cumartesi)</label>
+                            <input type="date" id="book-date" class="form-input">
+                        </div>
+                        <div class="input-box">
+                            <label for="book-time">Tercih Edilen Saat Dilimi</label>
+                            <select id="book-time" class="form-select">
+                                <option value="" disabled selected>Saat Dilimi Seçiniz</option>
+                                <option value="10:00 - 12:00">Öğleden Önce (10:00 - 12:00)</option>
+                                <option value="12:00 - 14:00">Öğle Arası (12:00 - 14:00)</option>
+                                <option value="14:00 - 16:00">Öğleden Sonra (14:00 - 16:00)</option>
+                                <option value="16:00 - 19:00">Akşamüstü (16:00 - 19:00)</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3 Pane -->
+                <div class="wizard-pane">
+                    <h4 class="wizard-title">İletişim Bilgileri</h4>
+                    <p class="wizard-desc">Size ulaşabilmemiz ve randevunuzu onaylayabilmemiz için bilgilerinizi giriniz.</p>
+                    <div class="contact-form" style="gap: 16px;">
+                        <div class="input-box">
+                            <label for="book-name">Adınız Soyadınız</label>
+                            <input type="text" id="book-name" class="form-input" required placeholder="Adınız Soyadınız">
+                        </div>
+                        <div class="input-box">
+                            <label for="book-phone">Telefon Numaranız</label>
+                            <input type="tel" id="book-phone" class="form-input" required placeholder="Telefon Numaranız">
+                        </div>
+                        <div class="input-box form-full-width">
+                            <label for="book-email">E-posta Adresiniz</label>
+                            <input type="email" id="book-email" class="form-input" required placeholder="E-posta Adresiniz">
+                        </div>
+                        <div class="input-box form-full-width">
+                            <label for="book-notes">Eklemek İstediğiniz Not (Opsiyonel)</label>
+                            <textarea id="book-notes" class="form-textarea" placeholder="Talebinizle ilgili ek notunuz..."></textarea>
+                        </div>
+                        <div class="input-box form-full-width checkbox-box" style="flex-direction: row; align-items: center; gap: 10px; margin-top: 10px;">
+                            <input type="checkbox" id="book-kvkk" required style="width: 18px; height: 18px; accent-color: var(--accent-gold); cursor: pointer;">
+                            <label for="book-kvkk" style="text-transform: none; font-size: 0.85rem; font-weight: 400; cursor: pointer; color: var(--text-secondary);">
+                                <a href="#" class="open-kvkk-modal" style="text-decoration: underline; color: var(--accent-gold);">KVKK Aydınlatma Metni</a>'ni okudum ve kabul ediyorum.
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 4 Pane -->
+                <div class="wizard-pane" style="text-align: center; padding: 20px 0;">
+                    <div style="font-size: 4rem; color: var(--accent-gold); margin-bottom: 20px;">✓</div>
+                    <h4 class="wizard-title">Talebiniz Başarıyla Alındı!</h4>
+                    <p class="wizard-desc">Randevu ön talebiniz asistanımıza iletilmiştir. Bilgileriniz kontrol edilerek en kısa sürede telefon veya WhatsApp üzerinden onay için sizinle iletişime geçilecektir.</p>
+                    
+                    <div style="background-color: var(--bg-primary); border: 1px solid var(--border-color); padding: 20px; border-radius: var(--border-radius-md); text-align: left; max-width: 400px; margin: 0 auto 10px;">
+                        <p style="font-size: 0.85rem; margin-bottom: 8px;"><strong>Hizmet:</strong> <span id="summary-service" style="color: var(--accent-gold);"></span></p>
+                        <p style="font-size: 0.85rem;"><strong>Tercih Edilen Zaman:</strong> <span id="summary-datetime" style="color: var(--accent-gold);"></span></p>
+                    </div>
+                </div>
+
+                <!-- Wizard Navigation Footer Buttons -->
+                <div class="wizard-footer-buttons">
+                    <button class="btn btn-secondary" id="wizard-prev">Geri</button>
+                    <button class="btn btn-primary" id="wizard-next">İleri</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 4: Blog Post Reader -->
+    <div class="modal-overlay" id="blog-modal">
+        <div class="modal-box" style="max-width: 750px;">
+            <button class="modal-close-btn" aria-label="Kapat"><svg><use href="#icon-close"></use></svg></button>
+            <div class="modal-body">
+                <div class="blog-modal-header" style="margin-bottom: 20px;">
+                    <span class="blog-modal-category" style="font-family: var(--font-branding); font-size: 0.8rem; letter-spacing: 0.1em; color: var(--accent-gold); text-transform: uppercase;">Kategori</span>
+                    <h3 class="blog-modal-title" style="font-family: var(--font-heading); font-size: 1.8rem; margin-top: 5px; margin-bottom: 10px; color: var(--text-primary); border-bottom: 1px solid var(--border-color); padding-bottom: 15px;">Başlık</h3>
+                    <span class="blog-modal-date" style="font-size: 0.8rem; color: var(--text-secondary); display: block; margin-top: 5px;">Tarih</span>
+                </div>
+                <div class="blog-modal-content" style="font-size: 1rem; line-height: 1.8; color: var(--text-secondary); display: flex; flex-direction: column; gap: 15px; max-height: 60vh; overflow-y: auto; padding-right: 10px;">
+                    <!-- Dynamic Blog Content Filled from script.js -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================================================
+       Floating Action Buttons (Direct Call & WhatsApp)
+       ========================================================================== -->
+    <div class="floating-actions">
+        <a href="https://wa.me/905549466329" target="_blank" class="float-btn float-whatsapp" aria-label="WhatsApp ile İletişim">
+            <svg><use href="#icon-whatsapp"></use></svg>
+        </a>
+        <a href="tel:+905549466329" class="float-btn float-phone" aria-label="Telefonla Arayın">
+            <svg><use href="#icon-phone"></use></svg>
+        </a>
+    </div>
+
+    <!-- JS Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
